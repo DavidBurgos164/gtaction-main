@@ -1,0 +1,15 @@
+/node_modules
+/migrations
+/client_packages/game_resources
+/pmrp-frontend/node_modules
+/package-lock.json
+/db backup
+/pmrp-ucp/client/node_modules
+/pmrp-ucp/server/node_modules
+db backup
+*.cache
+*.pdb
+package-lock.json
+.eslintrc.js
+client_packages/.listcache
+client_packages/.listcache

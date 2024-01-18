@@ -1,0 +1,19 @@
+<div class="container">
+    <div class="interface">
+      <div id="count-down"></div>
+      <div class="interface__row">
+        <div>grid size</div>
+        <div>time</div>
+        <div>sequence length</div>
+      </div>
+      <div class="interface__row">
+        <input onchange="keypad.handleSizeChange()" id="sizeInput" value="3" class="interface__input"/>
+        <div class="interface__timer" id="timer">0.0000</div>
+        <input onchange="keypad.handleSequenceChange()" id="sequenceInput" value="6" class="interface__input"/>
+      </div>
+    </div>
+  <div class="keypad" id="keypad">
+  </div>
+  </div>
+  <script src="./script.js"></script>
+  <link rel="stylesheet" href="simon.css">

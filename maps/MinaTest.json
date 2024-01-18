@@ -1,0 +1,45 @@
+{
+	"Map": {
+		"Objects": {
+			"MapObject": [
+				{
+					"Type": "Prop",
+					"Position": {
+						"X": "2953.691650390625",
+						"Y": "2742.0908203125",
+						"Z": "42.83229064941406"
+					},
+					"Rotation": {
+						"X": "0.0000017225742112714215",
+						"Y": "-0.8000003099441528",
+						"Z": "0"
+					},
+					"Hash": "212795208",
+					"Dynamic": "false",
+					"Quaternion": {
+						"X": "0",
+						"Y": "0",
+						"Z": "0",
+						"W": "1"
+					},
+					"Door": "false"
+				}                
+			]
+		},
+		"RemoveFromWorld": "",
+		"Markers": "",
+		"Metadata": {
+			"Creator": "Guti",
+			"Name": "Mina",
+			"Description": "",
+			"LoadingPoint": {
+				"_xsi:nil": "true"
+			},
+			"TeleportPoint": {
+				"_xsi:nil": "true"
+			}
+		},
+		"_xmlns:xsd": "http://www.w3.org/2001/XMLSchema",
+		"_xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance"
+	}
+}

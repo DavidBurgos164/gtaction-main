@@ -1,0 +1,14 @@
+{
+    "announce": true,
+    "allow-cef-debugging": true,
+    "gamemode": "roleplay",
+    "name": "discord.gg/Z2mj3vY69K Proximamente ;)",
+    "url": "https://discord.gg/Z2mj3vY69K",
+    "maxplayers": 2000,
+    "language": "es",
+    "enable-nodejs": true,
+    "port": 22005,
+    "stream-distance": 700.0,
+    "voice-chat": true,
+    "voice-chat-sample-rate": 48000
+}

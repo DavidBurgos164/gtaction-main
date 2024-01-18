@@ -1,0 +1,1 @@
+var loginBrowser = mp.browsers.new('package://gui/Login.html');

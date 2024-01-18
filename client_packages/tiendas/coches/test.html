@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compra de Coches GTA V</title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+
+        }
+
+        .car-container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .car-card {
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 15px;
+            width: 100%;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            margin-bottom: 10px;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            margin: 0;
+        }
+
+        .slick-prev,
+        .slick-next {
+            font-size: 24px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+<div class="car-container">
+    <div class="car-slider" id="carSlider"></div>
+</div>
+<button onclick="cerrar()">Cerrar</button>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<script>
+    function cerrar(){
+        mp.events.call('cerrarmenuCochesPillbox'); 
+    }
+
+    const carsData = {
+        "adder": {
+            "DisplayName": "adder",
+            "MaxSpeed": 51.77096,
+            "VehicleClass": 7
+            // ... otras propiedades
+        },
+        "ztype": {
+            "DisplayName": "ztype",
+            "MaxSpeed": 51.77096,
+            "VehicleClass": 7
+            // ... otras propiedades
+        },
+        // ... otros coches
+    };
+
+    function createCarCards() {
+        const carSlider = $("#carSlider");
+
+        for (const carKey in carsData) {
+            const car = carsData[carKey];
+
+            const carCard = $("<div>").addClass("car-card").data("carKey", carKey);
+
+            const carImage = $("<img>").attr("src", `previewcoches/${carKey}.jpg`);
+            carCard.append(carImage);
+
+            const carTitle = $("<h2>").text(car.DisplayName);
+            carCard.append(carTitle);
+
+            const carInfo = $("<p>").text(`Max Speed: ${car.MaxSpeed.toFixed(2)} | Vehicle Class: ${car.VehicleClass}`);
+            carCard.append(carInfo);
+
+            const carPrice = $("<p>").text(`Price: $${(Math.random() * 100000).toFixed(2)}`);
+            carCard.append(carPrice);
+
+            carSlider.slick("slickAdd", carCard);
+        }
+    }
+
+    function onSlideChange(event, slick, currentSlide,carKey) {
+        // Lógica que se ejecuta cada vez que cambias de coche
+        const currentCarKey = $(".slick-active").data("carKey");
+        mp.events.call('crearpreviewcoche',currentCarKey); 
+    }
+
+    $(document).ready(function () {
+        const carSlider = $("#carSlider");
+
+        carSlider.slick({
+            infinite: false,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            arrows: true,
+            prevArrow: '<button type="button" class="slick-prev">&#8592;</button>',
+            nextArrow: '<button type="button" class="slick-next">&#8594;</button>'
+        });
+
+        carSlider.on("init", function () {
+            // Lógica que se ejecuta al entrar
+            console.log("Entraste al carrusel");
+        });
+
+        carSlider.on("afterChange", onSlideChange);
+
+        createCarCards();
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,11 @@
+#logosv {
+    position: fixed; /* Establece la posici�n fija */
+    top: 0; /* En la parte superior */
+    right: 0; /* En la parte derecha */
+    width: 100px; /* Ajusta el ancho seg�n sea necesario */
+    height: auto; /* Mantiene la proporci�n de la imagen */
+    margin-top: 5px;
+    margin-right: 5px;
+    user-select: none;
+    pointer-events: none;
+}

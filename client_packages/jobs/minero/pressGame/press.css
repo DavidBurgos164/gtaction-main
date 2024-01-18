@@ -1,0 +1,48 @@
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.contenedor {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  background: black;
+  padding: 10px; /* Ajusta el espacio alrededor de la barra de progreso */
+  border-radius: 10px; /* Ajusta el radio de los bordes si lo deseas */
+}
+
+.progress-bar {
+  display: flex;
+  flex-direction: column;
+}
+
+.progress-bar > .label {
+  font-size: 20px;
+  font-family: Arial, sans-serif;
+  color: white;
+  margin-bottom: 10px;
+}
+
+.progress-bar > .line {
+  width: 100%;
+  max-width: 600px; /* Ajusta el ancho máximo de la barra de progreso */
+  height: 10px;
+  background: #E8E8E8;
+  border-radius: 10px;
+  position: relative;
+  box-shadow: 0px 0px 20px 3px #E8E8E8;
+}
+
+.progress-bar > .line > span {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  border-radius: 10px;
+}
